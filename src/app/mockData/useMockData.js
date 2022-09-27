@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import httpService from "../services/httpService";
 
 import professions from "./professions.json";
@@ -34,13 +34,13 @@ const useMockData = () => {
             await insertData("profession", professions);
             await insertData("quality", qualities);
             await insertData("user", users);
-
-            passed === allRequests && setCurStatus(status.success);
         } catch (error) {
             setCurStatus(status.error);
             setError(error.message);
         }
     };
+
+    useEffect(() => { passed === allRequests && setCurStatus(status.success); }, [passed]);
 
     return {
         init,
