@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { convertToSelectField } from "../../../utils/convertToSelectField";
 
 const SelectField = ({
     label,
@@ -17,10 +18,7 @@ const SelectField = ({
         return "form-select" + (error ? " is-invalid" : "");
     };
 
-    const optionsArray =
-        !Array.isArray(options) && typeof options === "object"
-            ? Object.values(options)
-            : options;
+    const optionsArray = convertToSelectField(options);
 
     return (
         <div className="mb-4">

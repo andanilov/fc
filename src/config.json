@@ -1,4 +1,9 @@
 {
     "apiEndPoint": "https://fc-test-44e2a-default-rtdb.europe-west1.firebasedatabase.app/",
-    "isFirebase": true
+    "isFirebase": true,
+    "firebaseSignUpEndpoint": "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=",
+    "firebaseSignInEndpoint": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=",
+    "jwtToken": "jwt-token",
+    "jwtRefreshToken": "jwt-refresh-token",
+    "jwtExpires": "jwt-expires"
 }
